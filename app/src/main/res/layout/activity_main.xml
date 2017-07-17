@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.vajiraprabuddhaka.microcontroller_sem5.MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </RelativeLayout>
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,6 +37,26 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <include layout="@layout/content_main"
-        android:id="@+id/include" />
+        android:id="@+id/include"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="Universal Remote"
+        android:textColor="#2E6FEC"
+        android:textSize="36sp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center_horizontal" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="388dp"
+        android:layout_height="531dp"
+        android:layout_gravity="bottom|center_horizontal"
+        app:srcCompat="@drawable/download" />
+
 
 </android.support.design.widget.CoordinatorLayout>

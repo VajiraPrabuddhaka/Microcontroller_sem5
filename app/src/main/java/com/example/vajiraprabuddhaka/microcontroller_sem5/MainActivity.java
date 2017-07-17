@@ -1,5 +1,6 @@
 package com.example.vajiraprabuddhaka.microcontroller_sem5;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if (!mBtAdapter.isEnabled()) {
+            Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableIntent, 3);
+        }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -59,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(myIntent);
             return true;
         }
+        if (id == R.id.secure_connect_scan ){
+            Intent serverIntent = new Intent(MainActivity.this, DeviceListActivity.class);
+            startActivity(serverIntent);
+            return true;
+        }
+
+
 
         return super.onOptionsItemSelected(item);
     }

@@ -15,14 +15,16 @@ public class DBcreator {
         //If it's the first time, we have to create the databases.
         mydatabase.execSQL("CREATE TABLE IF NOT EXISTS Remote(" +
                 "ID VARCHAR PRIMARY KEY," +
-                "Remotename VARCHAR," +
+                "Remotename VARCHAR" +
                 " );");
 
 
         //It is a reserved keyword and will give errors in queries
         mydatabase.execSQL("CREATE TABLE IF NOT EXISTS remotebuttons(" +
                 "ID VARCHAR," +
-                "Account_no VARCHAR," +
+                "Btn_name VARCHAR," +
+                "raw_data VARCHAR," +
+                "loop VARCHAR,"  +
                 "FOREIGN KEY (ID) REFERENCES Remote(ID)" +
                 ");");
 

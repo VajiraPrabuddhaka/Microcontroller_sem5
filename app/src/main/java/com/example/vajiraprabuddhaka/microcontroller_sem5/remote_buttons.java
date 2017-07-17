@@ -26,8 +26,22 @@ public class remote_buttons extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        data.add("foo");
-        data.add("bar");
+        data.add("Power");
+        data.add("Vol +");
+        data.add("Vol -");
+        data.add("CH+");
+        data.add("CH-");
+        data.add("1");
+        data.add("2");
+        data.add("3");
+        data.add("4");
+        data.add("5");
+        data.add("6");
+        data.add("7");
+        data.add("8");
+        data.add("9");
+        data.add("0");
+        data.add("Menu");
         setContentView(R.layout.activity_remote_buttons);
 
         ListView lv = (ListView) findViewById(R.id.buttons_list);
